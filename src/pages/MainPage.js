@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import Copyright from "../components/copyright";
 import ListBook from "../components/listBook";
@@ -9,15 +9,20 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
+import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 
 const useStyles = makeStyles(theme => ({
   icon: {
     marginRight: theme.spacing(2)
   },
+  form: {
+    width: "100%", // Fix IE 11 issue.
+    marginTop: theme.spacing(3)
+  },
   heroContent: {
     backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(8, 0, 6)
+    padding: theme.spacing(8, 0, 0)
   },
   heroButtons: {
     marginTop: theme.spacing(4)
@@ -43,24 +48,60 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const cards = [1, 2, 3, 4, 5, 6, 7];
-
-export default function MainPage() {
+export default function MainPage({ books, getAllBooks, user, handleShowBook }) {
   const classes = useStyles();
+
+  const [searchFilter, setSearchFilter] = useState("");
+  const [addBookInit, setAddBookInit] = useState(false);
 
   return (
     <React.Fragment>
       <CssBaseline />
 
       <main>
-        <SearchBook />
-        <AddBook />
-
         <Container className={classes.cardGrid} maxWidth="md">
+          <SearchBook setSearchFilter={setSearchFilter} />
+
+          {!addBookInit && (
+            <Container className={classes.cardGrid} maxWidth="md">
+              <form className={classes.form} noValidate>
+                <Grid container spacing={3}>
+                  <Button
+                    onClick={() => setAddBookInit(true)}
+                    variant="contained"
+                    color="primary"
+                  >
+                    Add a new book to library
+                  </Button>
+                </Grid>
+              </form>
+            </Container>
+          )}
+
+          {addBookInit && (
+            <AddBook
+              setAddBookInit={setAddBookInit}
+              getAllBooks={getAllBooks}
+              user={user}
+            />
+          )}
           <Grid container spacing={4}>
-            {cards.map((card, index) => (
-              <ListBook key={index} card={card} />
-            ))}
+            {books &&
+              books
+                .filter(book =>
+                  searchFilter === ""
+                    ? book
+                    : book.lentTo && book.lentTo.startsWith(searchFilter)
+                    ? book
+                    : null
+                )
+                .map((book, index) => (
+                  <ListBook
+                    key={index}
+                    book={book}
+                    handleShowBook={handleShowBook}
+                  />
+                ))}
           </Grid>
         </Container>
       </main>

@@ -44,34 +44,37 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
-export default function ListBook({card}) {
+export default function ListBook({book,handleShowBook}) {
   const classes = useStyles();
 
   return (
     <React.Fragment>
       <CssBaseline />
-      <Grid item key={card} xs={12} sm={6} md={4}>
+      <Grid item key={book} xs={12} sm={6} md={4}>
         <Card className={classes.card}>
           <CardMedia
+          onClick={() => handleShowBook(book)}
             className={classes.cardMedia}
-            image="https://images.penguinrandomhouse.com/cover/9780399588198"
-            title="Image title"
+            image={book.coverURL}
+            // image="https://images.penguinrandomhouse.com/cover/9780399588198"
+            title={book.title}
+            alt={book.title}
           />
+
           <CardContent className={classes.cardContent}>
             <Typography gutterBottom variant="h5" component="h2">
-              Born A Crime
+              {book.title}
             </Typography>
             <Typography>
-              This is a media card. You can use this section to describe the
-              content.
+              Lent To: {book.lentTo}
             </Typography>
           </CardContent>
           <CardActions>
-            <Button size="small" color="primary">
-              View
+            <Button onClick={() => handleShowBook(book)} size="small" color="primary">
+              View Book
             </Button>
             <Button size="small" color="primary">
-              Edit
+              Lent to: {book.lentTo ? book.lentTo : 'Nobody'}
             </Button>
           </CardActions>
         </Card>

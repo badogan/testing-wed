@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+
+import API from "../APIsHelpers/API";
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -34,8 +36,24 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function AddBook() {
+export default function AddBook(props) {
   const classes = useStyles();
+
+  const [title, setTitle] = useState(null);
+  const [coverURL, setCoverURL] = useState(null);
+
+  const handleAddBook = e => {
+    API.addBook(props.user._id, {
+      title,
+      coverURL
+    }).then(data => {
+      console.log("new book returned data: ", data);
+      if (data.status === "success") {
+        props.getAllBooks(props.user._id);
+        props.setAddBookInit(false);
+      }
+    });
+  };
 
   return (
     <React.Fragment>
@@ -47,6 +65,7 @@ export default function AddBook() {
           <Grid container spacing={3}>
             <Grid item xs={12}>
               <TextField
+                onChange={e => setTitle(e.target.value)}
                 required
                 id="bookName"
                 name="bookName"
@@ -56,6 +75,7 @@ export default function AddBook() {
             </Grid>
             <Grid item xs={12}>
               <TextField
+                onChange={e => setCoverURL(e.target.value)}
                 id="bookCoverURL"
                 name="bookCoverURL"
                 label="Book Cover URL"
@@ -63,6 +83,10 @@ export default function AddBook() {
               />
             </Grid>
             <Button
+              onClick={e => {
+                e.preventDefault();
+                handleAddBook();
+              }}
               type="submit"
               variant="contained"
               color="primary"
@@ -71,6 +95,7 @@ export default function AddBook() {
               Add Book
             </Button>
             <Button
+              onClick={() => props.setAddBookInit(false)}
               type="submit"
               variant="contained"
               color="primary"

@@ -43,7 +43,7 @@ export default function Album(props) {
               Track your books
             </Typography>
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
-            A small personal library - allows you log your books, whom you lent them to, when you lent them. Add and delete books. Search based on whom you lent them to.
+            A personal library - allows you log your books, whom you lent them to, when you lent them. Add and delete books. Search based on whom you lent them to.
               Yours, don&apos;t forget them.
             </Typography>
             <div className={classes.heroButtons}>

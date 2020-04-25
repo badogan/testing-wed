@@ -8,27 +8,28 @@ import AccountCircle from "@material-ui/icons/AccountCircle";
 
 const useStyles = makeStyles(theme => ({
   margin: {
-    margin: theme.spacing(2)
+    margin: theme.spacing(0)
   },
   cardGrid: {
-    paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8)
+    paddingTop: theme.spacing(0),
+    paddingBottom: theme.spacing(0)
   },
 }));
 
-export default function SearchInput() {
+export default function SearchInput({setSearchFilter}) {
   const classes = useStyles();
 
   return (
     <Container className={classes.cardGrid} maxWidth="md">
 
     <div className={`${classes.margin}`}>
-      <Grid container spacing={1} alignItems="center">
+      <Grid container spacing={2} alignItems="center">
         <Grid item >
           <AccountCircle />
         </Grid>
-        <Grid>
+        <Grid item>
           <TextField
+          onChange={(e)=>setSearchFilter(e.target.value)}
             id="outlined-search"
             label="Search whom you lent your books to"
             type="search"
