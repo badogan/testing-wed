@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Route } from "react-router-dom";
 
 import API from "./APIsHelpers/API";
@@ -37,10 +37,16 @@ function App(props) {
     );
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setUser(null);setBooks(null);setShowBook(null)
+    props.history.push("/");
+  };
+
   return (
     <React.Fragment>
       <CssBaseline />
-      <Header />
+      <Header handleLogout={handleLogout} user={user}/>
 
       <Route
         exact

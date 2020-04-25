@@ -126,7 +126,7 @@ export default function LoginPage({updateUser,history}) {
             </Button>
             <Grid container>
               <Grid item>
-                <Link onClick={() => history.push("/signup")} variant="body2">
+                <Link component='button' onClick={() => history.push("/signup")} variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
