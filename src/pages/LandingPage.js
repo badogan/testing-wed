@@ -1,24 +1,14 @@
 import React from 'react';
+
+import Copyright from '../components/copyright'
+
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link';
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Sample site from '}
-      <Link color="inherit" href="https://basridogan.com" target="_blank">
-       basridogan.com. Click here for more
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -27,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   heroContent: {
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(10, 0, 6),
-    height: '100%'
+    // height: '80vh'
   },
   heroButtons: {
     marginTop: theme.spacing(4),
@@ -38,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Album() {
+export default function Album(props) {
   const classes = useStyles();
 
   return (
@@ -59,12 +49,12 @@ export default function Album() {
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
-                  <Button variant="contained" color="primary">
+                  <Button onClick={() => props.history.push("/signup")} variant="contained" color="primary">
                     Start your library
                   </Button>
                 </Grid>
                 <Grid item>
-                  <Button onClick={()=>console.log('I am clicked')} variant="outlined" color="primary">
+                  <Button onClick={() => props.history.push("/login")} variant="outlined" color="primary">
                     Login
                   </Button>
                 </Grid>
