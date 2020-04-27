@@ -51,7 +51,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function LoginPage({updateUser,history}) {
+export default function LoginPage({ updateUser, history }) {
   const classes = useStyles();
   const { initiateLoginProcess, loggedInUser, token } = useLogin();
 
@@ -88,6 +88,8 @@ export default function LoginPage({updateUser,history}) {
           </Typography>
           <form className={classes.form} noValidate>
             <TextField
+              data-testid="LoginPage-Ref1"
+              // value={'text field value'}
               onChange={synchEmail}
               variant="outlined"
               margin="normal"
@@ -126,7 +128,11 @@ export default function LoginPage({updateUser,history}) {
             </Button>
             <Grid container>
               <Grid item>
-                <Link component='button' onClick={() => history.push("/signup")} variant="body2">
+                <Link
+                  component="button"
+                  onClick={() => history.push("/signup")}
+                  variant="body2"
+                >
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
