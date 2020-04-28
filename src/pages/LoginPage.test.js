@@ -22,6 +22,6 @@ afterEach(() => {
 test("test email address entry text field", () => {
   const { getByTestId} = render(<LoginPage />);
   let targetNode = getByTestId("LoginPage-Ref1").querySelector("input"); //MUI framework special! otherwise not needed this deep
-  fireEvent.change(targetNode, { target: { value: "a" } });
-  expect(targetNode).toHaveValue("a");
+  fireEvent.change(targetNode, { target: { value: "ab" } });
+  expect(targetNode).toHaveValue("ab");
 });
