@@ -1,9 +1,12 @@
 import React from "react";
 import { unmountComponentAtNode } from "react-dom";
 import { render, fireEvent } from "@testing-library/react";
-// import { act } from "react-dom/test-utils";
+import { act } from "react-dom/test-utils";
 
 import LoginPage from "./LoginPage";
+
+// jest.mock('../hooks/useLogin')
+
 
 let container = null;
 beforeEach(() => {
