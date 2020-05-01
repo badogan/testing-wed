@@ -32,16 +32,16 @@ You will need to spin up the backend to this project. Please refer above for bac
 <img src="./src/assets/IWantMyBook-1.png" alt="Landing Page" height="500">
 
 ## STEP-2: Signup Page
-<img src="./src/assets/IWantMyBook-Signup.png" alt="Landing Page" height="500" width="450">
+<img src="./src/assets/IWantMyBook-Signup.png" alt="Landing Page" height="500">
 
 ## STEP-3: Main Page
-<img src="./src/assets/IWantMyBook-MainPage.png" alt="Landing Page" height="500" width="450">
+<img src="./src/assets/IWantMyBook-MainPage.png" alt="Landing Page" height="500">
 
 ## STEP-4: Search / Filter Functionality
-<img src="./src/assets/IWantMyBook-Search.png" alt="Landing Page" height="500" width="450">
+<img src="./src/assets/IWantMyBook-Search.png" alt="Landing Page" height="500">
 
 ## STEP-5: Book Lending and Return Functionality
-<img src="./src/assets/IWantMyBook-Lend.png" alt="Landing Page" height="300" width="300">
+<img src="./src/assets/IWantMyBook-Lend.png" alt="Landing Page" height="300">
 
 ## Future Improvements
 - Process for the user to "search and select the book" rather than "adding via form" could be implemented 
