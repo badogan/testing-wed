@@ -102,6 +102,7 @@ export default function LoginPage({ updateUser, history }) {
               autoFocus
             />
             <TextField
+              data-testid="LoginPage-Ref2"
               onChange={synchPassword}
               variant="outlined"
               margin="normal"

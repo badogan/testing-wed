@@ -1,68 +1,50 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# I Want My Book Back
+Users can use the site to keep track of people they have lent their books to.
 
-## Available Scripts
+## Features
+- Users can signup, login and logout
+- Allows users to create a new book with title and book cover(url)
+- User can view book details or delete them
+- User has the option to search the books lent to a specific person
 
-In the project directory, you can run:
+## Deployment
+Frontend deployed in Netlify here: https://hungry-brattain-f49eab.netlify.app/
+Frontend repo here: https://github.com/badogan/testing-wed
+Backend in Heroku. Backend code here: https://github.com/badogan/booktracker
 
-### `yarn start`
+## Built With
+- React with hooks
+- Uses Material UI useStyles() and theme (with minor modification). CSS-in-JS
+- Frontend Testing: Jest, testing-library/react
+- Frontend CI: Github Actions for CI
+- Backend: Nodejs Express, MongoDB(Mongoose), CircleCI 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation
+ In the project directory, run:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+```bash
+npm install
+npm start
+```
+You will need to spin up the backend to this project. Please refer above for backend repo details.
 
-### `yarn test`
+## STEP-1: Landing Page
+<img src="./src/assets/IWantMyBook-1.png" alt="Landing Page" height="500">
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## STEP-2: Signup Page
+<img src="./src/assets/IWantMyBook-Signup.png" alt="Landing Page" height="500">
 
-### `yarn build`
+## STEP-3: Main Page
+<img src="./src/assets/IWantMyBook-MainPage.png" alt="Landing Page" height="500">
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## STEP-4: Search / Filter Functionality
+<img src="./src/assets/IWantMyBook-Search.png" alt="Landing Page" height="500">
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## STEP-5: Book Lending and Return Functionality
+<img src="./src/assets/IWantMyBook-Lend.png" alt="Landing Page" height="300">
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Future Improvements
+- Process for the user to "search and select the book" rather than "adding via form" could be implemented 
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Author
+Basri Dogan
