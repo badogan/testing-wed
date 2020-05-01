@@ -29,7 +29,7 @@ npm start
 You will need to spin up the backend to this project. Please refer above for backend repo details.
 
 ## STEP-1: Landing Page
-<img src="./src/assets/IWantMyBook-1.png" alt="Landing Page" height="500" width="450">
+<img src="./src/assets/IWantMyBook-1.png" alt="Landing Page" height="500">
 
 ## STEP-2: Signup Page
 <img src="./src/assets/IWantMyBook-Signup.png" alt="Landing Page" height="500" width="450">
