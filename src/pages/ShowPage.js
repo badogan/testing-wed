@@ -87,7 +87,7 @@ export default function ShowPage(props) {
   return (
     <React.Fragment>
       <CssBaseline />
-      <Grid container key={props.book} xs={12} sm={6} md={4}>
+      <Grid container key={props.book} xs={12} sm={6} md={4} item={true}>
         <Card className={classes.card}>
           <CardMedia
             className={classes.cardMedia}
