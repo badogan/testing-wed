@@ -80,6 +80,7 @@ export default function MainPage({ books, getAllBooks, user, handleShowBook }) {
 
           {addBookInit && (
             <AddBook
+              addBookInit={addBookInit}
               setAddBookInit={setAddBookInit}
               getAllBooks={getAllBooks}
               user={user}

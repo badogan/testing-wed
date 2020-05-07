@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import API from "../APIsHelpers/API";
+import SearchResults from "./searchResults";
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -42,7 +43,25 @@ export default function AddBook(props) {
   const [title, setTitle] = useState(null);
   const [coverURL, setCoverURL] = useState(null);
 
-  const handleAddBook = e => {
+  // New Code
+  const [searchedBooks, setSearchedBooks] = useState();
+  const handleSearchBook = e => {
+    API.searchBook({
+      title: title
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log("data.data: ", data.data);
+        if (data.status === "success") {
+          setSearchedBooks(data.data.data);
+        }
+      });
+  };
+  //
+
+  const handleAddBook = (title, coverURL) => {
+    setTitle(title);
+    setCoverURL(coverURL);
     API.addBook(props.user._id, {
       title,
       coverURL
@@ -73,26 +92,18 @@ export default function AddBook(props) {
                 fullWidth
               />
             </Grid>
-            <Grid item xs={12}>
-              <TextField
-                onChange={e => setCoverURL(e.target.value)}
-                id="bookCoverURL"
-                name="bookCoverURL"
-                label="Book Cover URL"
-                fullWidth
-              />
-            </Grid>
+
             <Button
               onClick={e => {
                 e.preventDefault();
-                handleAddBook();
+                handleSearchBook();
               }}
               type="submit"
               variant="contained"
               color="primary"
               className={classes.submit}
             >
-              Add Book
+              Search Book
             </Button>
             <Button
               onClick={() => props.setAddBookInit(false)}
@@ -105,6 +116,12 @@ export default function AddBook(props) {
             </Button>
           </Grid>
         </form>
+        {true && props.addBookInit && searchedBooks && (
+          <SearchResults
+            tileData={searchedBooks}
+            handleAddBook={handleAddBook}
+          />
+        )}
       </Container>
     </React.Fragment>
   );

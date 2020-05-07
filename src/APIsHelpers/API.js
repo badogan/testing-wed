@@ -5,6 +5,7 @@ const URL_userSignup = `${process.env.REACT_APP_BE_API_URL}/api/v1/users/signup`
 const PART1_URL_Books = `${process.env.REACT_APP_BE_API_URL}/api/v1/users/`
 // const PART1_URL_Books = "http://127.0.0.1:5000/api/v1/users/";
 const PART2_URL_Books = "/books";
+const URL_searchBook =  `${process.env.REACT_APP_BE_API_URL}/api/v1/books/searchbook`
 
 const postSimple = (url, obj) => {
   return fetch(url, {
@@ -105,7 +106,12 @@ const deleteBook = (userId, bookId) => {
   return deleteWithAuth(url)
 };
 
+const searchBook = (searchObj) => {
+  return postSimple(URL_searchBook,searchObj)
+}
+
 export default {
+  searchBook,
   UserSignIn,
   UserSignup,
   getAllBooks,
