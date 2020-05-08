@@ -37,10 +37,13 @@ You will need to spin up the backend to this project. Please refer above for bac
 ## STEP-3: Main Page
 <img src="./src/assets/IWantMyBook-MainPage.png" alt="Landing Page" height="500">
 
-## STEP-4: Search / Filter Functionality
+## STEP-4: Add Book Functionality
+<img src="./src/assets/IwantMyBook-BookSearch.png" alt="Landing Page" height="500">
+
+## STEP-5: Filter Functionality
 <img src="./src/assets/IWantMyBook-Search.png" alt="Landing Page" height="500">
 
-## STEP-5: Book Lending and Return Functionality
+## STEP-6: Book Lending and Return Functionality
 <img src="./src/assets/IWantMyBook-Lend.png" alt="Landing Page" height="300">
 
 ## Future Improvements
