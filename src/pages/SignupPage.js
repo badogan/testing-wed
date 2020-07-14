@@ -64,7 +64,7 @@ export default function SignupPage(props) {
           localStorage.token = result.token;
           props.updateUser(result.data.user);
         }
-      });
+      }).catch(err=>console.log(err));
     }
   };
 

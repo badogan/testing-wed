@@ -56,7 +56,6 @@ export default function ListBook({book,handleShowBook}) {
           onClick={() => handleShowBook(book)}
             className={classes.cardMedia}
             image={book.coverURL}
-            // image="https://images.penguinrandomhouse.com/cover/9780399588198"
             title={book.title}
             alt={book.title}
           />

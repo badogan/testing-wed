@@ -51,7 +51,7 @@ export default function AddBook(props) {
     })
       .then(res => res.json())
       .then(data => {
-        console.log("data.data: ", data.data);
+        // console.log("data.data: ", data.data);
         if (data.status === "success") {
           setSearchedBooks(data.data.data);
         }
