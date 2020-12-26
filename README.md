@@ -47,7 +47,8 @@ You will need to spin up the backend to this project. Please refer above for bac
 <img src="./src/assets/IWantMyBook-Lend.png" alt="Landing Page" height="300">
 
 ## Future Improvements
-- Process for the user to "search and select the book" rather than "adding via form" could be implemented 
+- DONE - Process for the user to "search and select the book" rather than "adding via form" could be implemented
+- Experiment other UI libraries to simplify unit testing 
 
 ## Author
 Basri Dogan
